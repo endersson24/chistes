@@ -11,7 +11,7 @@ export default function Body() {
         try {
             let url = 'https://api.chucknorris.io/jokes/random';
             if (categoriaActual !== "") {
-                url = `https://api.chucknorris.io/jokes/random?categoria=${categoria}`;
+                url = `https://api.chucknorris.io/jokes/random?category=${categoriaActual}`;
             }
             const response = await axios.get(url);
             setChisteActual(response.data.value);
@@ -19,6 +19,7 @@ export default function Body() {
             console.error(error);
         }
     };
+
 
 
     useEffect(() => {
@@ -36,41 +37,35 @@ export default function Body() {
 
     return (
         <>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-1 col-sm-3">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-xs-1 col-sm-3">
                     </div>
-                    <div class="col-xs-10 col-sm-6">
+                    <div className="col-xs-10 col-sm-6">
                         <div className='imgntext'>
-                            <img src="http://www.libertyclick.org/wp-content/uploads/2015/03/Chuck-Norris.jpg" alt="chuck Norris looking cool" className="img-circle img-responsive center-block" />
+                            <img src={imagen} alt="chuck Norris looking cool" className="imagen-pag" />
                             <h1> Chuck Norris dice...</h1>
                         </div>
-                        <div class="jumbotron">
-                            <div class="jumbotronContent">
-                                <h2><i class="fa fa-quote-left"></i><span id="quote"></span><i class="fa fa-quote-right">"{chisteActual}"</i></h2><br /><br />
-                                <button class="btn btn-primary btn-lg morequotes" id="button" onClick={obtenerChiste}>Generar chiste</button>
-                                <div className="seleccionar">
-                                    {categoria.map((cat) => {
-                                        return (
-                                            <div className="select-controles">
-                                                <label for="opcion1" class="boton-radio" htmlFor={cat}>
-                                                    <input
-                                                        type="radio"
-                                                        name="radio"
-                                                        value={cat}
-                                                        id={cat}
-                                                        onClick={() => setCategoriaActual(cat)}
-                                                    />
+                        <div className="jumbotron">
+                            <div className="jumbotronContent">
+                                <div className='conjunto'>
+                                    <div className="seleccionar">
+                                        <select className='select-control' value={categoriaActual} onChange={(e) => setCategoriaActual(e.target.value)}>
+                                            <option value="">Seleccione una categoría</option>
+                                            {categoria.map((cat) => (
+                                                <option key={cat} value={cat}>
                                                     {cat}
-                                                </label>
-                                            </div>
-                                        )
-                                    })}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <button className="btn btn-primary btn-lg morequotes" id="button" onClick={obtenerChiste}>Generar chiste</button>
                                 </div>
+                                <h2><i className="fa fa-quote-left"></i><span id="quote"></span><i className="fa fa-quote-right">"{chisteActual}"</i></h2><br /><br />
                             </div>
                         </div>
                     </div>
-                    <div class="col=xs-1 col-sm-3">
+                    <div className="col=xs-1 col-sm-3">
                     </div>
                 </div>
             </div>

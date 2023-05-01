@@ -3,6 +3,13 @@ h1 {
   font-family: 'Passion One', cursive;
   color: #ffffff;
 }
+.header {
+  background-color: #000;
+  border-radius: 20px;
+  width: 700px;
+  text-align: center;
+  margin: 0 auto;
+}
 
 .container-fluid {
   padding-top: 2%;
@@ -10,28 +17,30 @@ h1 {
 }
 
 body {
-  background-image: url('./assets/RectLight.svg');
+  background-image: url('./assets/AnimatedShape.svg');
 }
 
 .imgntext {
   margin-top: 2%;
   text-align: center;
 }
-
+.imagen-pag {
+  border-radius: 20px;
+}
 .col-xs-10 {
-  background-color: #177e89;
+  background-color: #a46500;
   margin: 0 auto;
   width: 40%;
   border: 2px solid;
   border-radius: 25px;
-  border-color: #084c61;
+  box-shadow: 1px 1px 10px #000;
 }
 
 .jumbotronContent {
   text-align: center;
   font-family: 'Passion One', cursive;
 }
-.seleccionar {
+.select-control {
   font-size: 30px;
   text-transform: capitalize;
   display: grid;
@@ -39,18 +48,9 @@ body {
   gap: 10px;
 }
 
-.boton-radio {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.boton-radio input[type='radio'] {
-  display: none;
-}
-
-.boton-radio input[type='radio']:checked + label {
-  background-color: #0056b3;
+.conjunto {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
 }
