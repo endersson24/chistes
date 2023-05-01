@@ -35,30 +35,45 @@ export default function Body() {
     }, []);
 
     return (
-        <div className="body-wrapper">
-            <img className="body-img" src={imagen} alt="chuck norris" />
-            <div className="body-joke-area">{chisteActual}</div>
-            <div className="body-button-wrapper">
-                <button className="body-joke-button" onClick={obtenerChiste}>
-                    Get Joke
-                </button>
-            </div>
-            <div className="body-radio-wrapper">
-                {categoria.map((cat) => {
-                    return (
-                        <div className="body-radio-button">
-                            <input
-                                type="radio"
-                                name="radio"
-                                value={cat}
-                                id={cat}
-                                onClick={() => setCategoriaActual(cat)}
-                            />
-                            <label htmlFor={cat}>{cat}</label>
+        <>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-1 col-sm-3">
+                    </div>
+                    <div class="col-xs-10 col-sm-6">
+                        <div className='imgntext'>
+                            <img src="http://www.libertyclick.org/wp-content/uploads/2015/03/Chuck-Norris.jpg" alt="chuck Norris looking cool" className="img-circle img-responsive center-block" />
+                            <h1> Chuck Norris dice...</h1>
                         </div>
-                    )
-                })}
+                        <div class="jumbotron">
+                            <div class="jumbotronContent">
+                                <h2><i class="fa fa-quote-left"></i><span id="quote"></span><i class="fa fa-quote-right">"{chisteActual}"</i></h2><br /><br />
+                                <button class="btn btn-primary btn-lg morequotes" id="button" onClick={obtenerChiste}>Generar chiste</button>
+                                <div className="seleccionar">
+                                    {categoria.map((cat) => {
+                                        return (
+                                            <div className="select-controles">
+                                                <label for="opcion1" class="boton-radio" htmlFor={cat}>
+                                                    <input
+                                                        type="radio"
+                                                        name="radio"
+                                                        value={cat}
+                                                        id={cat}
+                                                        onClick={() => setCategoriaActual(cat)}
+                                                    />
+                                                    {cat}
+                                                </label>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col=xs-1 col-sm-3">
+                    </div>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
