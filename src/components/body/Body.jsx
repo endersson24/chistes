@@ -7,6 +7,8 @@ export default function Body() {
     const [categoriaActual, setCategoriaActual] = useState('')
     const [chisteActual, setChisteActual] = useState('Click that button...')
 
+    // aqui obtenemos el chiste a través de la APi principal
+
     const obtenerChiste = async () => {
         try {
             let url = 'https://api.chucknorris.io/jokes/random';
@@ -21,7 +23,7 @@ export default function Body() {
     };
 
 
-
+    // esto hace una solicitud get a la api para obtener las categorias correspondientes de los chistes
     useEffect(() => {
         const fetchCategories = async () => {
             try {
@@ -43,7 +45,7 @@ export default function Body() {
                     </div>
                     <div className="col-xs-10 col-sm-6">
                         <div className='imgntext'>
-                            <img src={imagen} alt="chuck Norris looking cool" className="imagen-pag" />
+                            <img src={imagen} alt="Chuck Norris" className="imagen-pag" />
                             <h1> Chuck Norris dice...</h1>
                         </div>
                         <div className="jumbotron">

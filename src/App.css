@@ -54,3 +54,101 @@ body {
   grid-template-columns: 1fr 1fr;
   place-items: center;
 }
+
+/* Estilos para pantallas grandes */
+@media only screen and (min-width: 768px) {
+  .header {
+    width: 700px;
+  }
+
+  .col-xs-10 {
+    width: 40%;
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media only screen and (max-width: 768px) {
+  .header {
+    width: 90%;
+    max-width: 700px;
+  }
+
+  .col-xs-10 {
+    width: 70%;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 576px) {
+  .header {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+  }
+
+  .col-xs-10 {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+  }
+}
+
+/* Estilos comunes para todas las pantallas */
+h1 {
+  text-align: center;
+  font-family: 'Passion One', cursive;
+  color: #ffffff;
+}
+
+.header {
+  background-color: #000;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+body {
+  background-image: url('./assets/AnimatedShape.svg');
+}
+
+.imgntext {
+  margin-top: 2%;
+  text-align: center;
+}
+
+.imagen-pag {
+  border-radius: 20px;
+}
+
+.col-xs-10 {
+  background-color: #a46500;
+  margin: 0 auto;
+  border: 2px solid;
+  border-radius: 25px;
+  box-shadow: 1px 1px 10px #000;
+}
+
+.jumbotronContent {
+  text-align: center;
+  font-family: 'Passion One', cursive;
+}
+
+.select-control {
+  font-size: 30px;
+  text-transform: capitalize;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.conjunto {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
